@@ -1,0 +1,3 @@
+2. Seleziona tutti gli ospiti che sono nati dopo il 1988
+
+SELECT * FROM `ospiti` WHERE `date_of_birth` >= '1989-01-01'
