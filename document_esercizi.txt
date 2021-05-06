@@ -25,3 +25,4 @@ dell’esecuzione della query)
 	SELECT COUNT(`ospite_id`) FROM `paganti`
 
 9. Quanti posti letto ha l’hotel in totale?
+	SELECT SUM(`beds`) FROM `stanze`
