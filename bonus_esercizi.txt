@@ -2,6 +2,7 @@
 	SELECT COUNT(`id`) AS OspitiNascitaUguale, YEAR(`date_of_birth`) FROM `ospiti` GROUP BY YEAR(`date_of_birth`)
 
 2. Somma i prezzi dei pagamenti raggruppandoli per status
+	SELECT `status`, SUM(`price`) AS Somma_pagamenti FROM `pagamenti` GROUP BY `status`
 
 3. Conta quante volte è stata prenotata ogni stanza
 
