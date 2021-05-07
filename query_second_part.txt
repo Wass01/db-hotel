@@ -1,4 +1,9 @@
 1. Come si chiamano gli ospiti che hanno fatto più di due prenotazioni?
+	SELECT COUNT(`prenotazioni_has_ospiti`.`ospite_id`) AS `numero prenotazioni`, `ospiti`.`name` 
+	FROM `prenotazioni_has_ospiti` 
+	INNER JOIN `ospiti` ON `prenotazioni_has_ospiti`.`ospite_id` = `ospiti`.`id` 
+	GROUP BY `prenotazioni_has_ospiti`.`ospite_id` 
+	HAVING COUNT(`prenotazioni_has_ospiti`.`ospite_id`) > 2
 
 2. Stampare tutti gli ospiti per ogni prenotazione
 
