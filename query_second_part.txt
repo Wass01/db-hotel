@@ -19,8 +19,17 @@ prenotazioni fatte a Maggio 2018
 
 4. Fai la somma di tutti i prezzi delle prenotazioni per le stanze del
 primo piano
+	SELECT SUM(`pagamenti`.`price`) AS pagamenti_primo_piano FROM `prenotazioni`
+	INNER JOIN `pagamenti` ON `pagamenti`.`prenotazione_id` = `prenotazioni`.`id`
+	INNER JOIN `stanze` ON `prenotazioni`.`stanza_id` = `stanze`.`id`
+	WHERE `stanze`.`floor` = '1'
 
 5. Prendi i dati di fatturazione per la prenotazione con id=7
+	SELECT `pagamenti`.`prenotazione_id`, `paganti`.`name`,`paganti`.`lastname`,`paganti`.`address`
+	FROM `pagamenti` INNER JOIN `paganti` ON `pagamenti`.`pagante_id` = `paganti`.`id`
+	WHERE `pagamenti`.`prenotazione_id` = '7'
 
 6. Le stanze sono state tutte prenotate almeno una volta?
 (Visualizzare le stanze non ancora prenotate)
+	SELECT * FROM `prenotazioni` RIGHT JOIN `stanze`
+	ON `prenotazioni`.`stanza_id` = `stanze`.`id` WHERE `prenotazioni`.`id` IS NULL
