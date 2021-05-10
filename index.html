@@ -24,24 +24,24 @@
     </table>
 
 
-      <table v-if="roomId">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Room number:</th>
-            <th>Floor:</th>
-            <th>Beds:</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{ roomId.id }}</td>
-            <td>{{ roomId.room_number}}</td>
-            <td>{{ roomId.floor }}</td>
-            <td>{{ roomId.beds }}</td>
-          </tr>
-        </tbody>
-      </table>
+    <table v-if="roomId">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Room number:</th>
+          <th>Floor:</th>
+          <th>Beds:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ roomId.id }}</td>
+          <td>{{ roomId.room_number}}</td>
+          <td>{{ roomId.floor }}</td>
+          <td>{{ roomId.beds }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
