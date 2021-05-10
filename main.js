@@ -3,16 +3,23 @@ Vue.config.devtools = true;
 let app = new Vue({
   el: "#root",
   data: {
-    
+    rooms: [],
+    roomId: null,
   },
 
   mounted(){
-    axios.get('http://localhost/php/php-ajax-dischi/dati.php')
+    axios.get('http://localhost/db/db-hotel/api/rooms.php')
       .then((response) => {
-        this.dischi = response.data;
+        this.rooms = response.data.response;
     });
   },
 
-  methods: {
+  methods:{
+    openId: function(id) {
+      axios.get(`http://localhost/db/db-hotel/api/rooms.php?id=${id}` )
+        .then((response) => {
+          this.roomId = response.data.response[0];
+      });
+    }
   },
 });
